@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Excel Academy</title>
+    <meta name="description"
+        content="Get in touch with Excel Academy for JEE and NEET coaching enquiries. Visit us or reach out via phone, email, or our contact form.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: var(--bg-white);
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            color: var(--bg-white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+        }
+
+        .contact-info-card {
+            background: var(--bg-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .map-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo"><span>🎓 Excel Academy</span></a>
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help you achieve your dreams</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-container fade-in">
+                <!-- Contact Information -->
+                <div>
+                    <div class="contact-info-card">
+                        <h3>📍 Visit Us</h3>
+                        <!-- [CUSTOMIZE] Update address -->
+                        <div class="contact-item">
+                            <span class="contact-icon">🏢</span>
+                            <div>
+                                <strong>Excel Academy</strong><br>
+                                123 Education Street, 2nd Floor<br>
+                                Academic City, State - 123456<br>
+                                India
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>📞 Call Us</h3>
+                        <!-- [CUSTOMIZE] Update phone numbers -->
+                        <div class="contact-item">
+                            <span class="contact-icon">☎️</span>
+                            <div>
+                                <strong>Main Office:</strong> +91 98765 43210<br>
+                                <strong>Admissions:</strong> +91 98765 43211
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>✉️ Email Us</h3>
+                        <!-- [CUSTOMIZE] Update email -->
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <strong>General Enquiries:</strong><br>
+                                info@excelacademy.com<br>
+                                <strong>Admissions:</strong><br>
+                                admissions@excelacademy.com
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>🕐 Working Hours</h3>
+                        <!-- [CUSTOMIZE] Update hours -->
+                        <div class="contact-item">
+                            <span class="contact-icon">⏰</span>
+                            <div>
+                                <strong>Monday - Saturday:</strong> 8:00 AM - 8:00 PM<br>
+                                <strong>Sunday:</strong> 9:00 AM - 2:00 PM<br>
+                                <small>(Closed on public holidays)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <div class="contact-info-card">
+                        <h3>Send us a Message</h3>
+                        <!-- [CUSTOMIZE] Replace YOUR_EMAIL with actual email -->
+                        <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST" data-validate="true">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission - Excel Academy">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://yourwebsite.com/contact.html?success=true">
+
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                                <span class="form-error">Please enter your name</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <span class="form-error">Please enter a valid email</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                <span class="form-error">Please enter a valid 10-digit phone number</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="course" class="form-label">Course Interested In *</label>
+                                <select id="course" name="course" class="form-select" required>
+                                    <option value="">Select a course</option>
+                                    <option value="JEE Main & Advanced">JEE Main & Advanced</option>
+                                    <option value="NEET (UG)">NEET (UG)</option>
+                                    <option value="Foundation (8-10)">Foundation (8-10)</option>
+                                    <option value="General Enquiry">General Enquiry</option>
+                                </select>
+                                <span class="form-error">Please select a course</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required
+                                    placeholder="Please tell us about your requirements, current class, exam target, etc."></textarea>
+                                <span class="form-error">Please enter your message</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Submit
+                                Enquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Find Us on Map</h2>
+            </div>
+
+            <div class="map-container fade-in">
+                <!-- [CUSTOMIZE] Replace with actual location coordinates -->
+                <!-- Default location: Connaught Place, New Delhi (demo location) -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9746934446293!2d77.21788731508078!3d28.631439782422996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd371d9e0f0b%3A0x9c0e3c6df8e1d0f0!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div class="text-center mt-3 fade-in">
+                <a href="https://maps.google.com" target="_blank" class="btn btn-secondary">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Excel Academy</h4>
+                    <p>Premier coaching institute for JEE and NEET preparation. Building futures, creating leaders.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="courses.html#jee">JEE Main & Advanced</a></li>
+                        <li><a href="courses.html#neet">NEET (UG)</a></li>
+                        <li><a href="courses.html#foundation">Foundation Course</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Education Street<br>Academic City, State - 123456</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ info@excelacademy.com</p>
+                    <p>🕐 Mon - Sat: 8:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Excel Academy. All rights reserved. | Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+
+</html>

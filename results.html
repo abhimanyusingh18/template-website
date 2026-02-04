@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Testimonials - Excel Academy</title>
+    <meta name="description"
+        content="Explore the outstanding results and success stories of Excel Academy students in JEE and NEET examinations.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: var(--bg-white);
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            color: var(--bg-white);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .result-card-detailed {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all var(--transition-base);
+            border: 3px solid var(--accent-color);
+        }
+
+        .result-card-detailed:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .result-badge {
+            display: inline-block;
+            background: var(--accent-dark);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .result-rank-large {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--accent-dark);
+            margin: var(--spacing-sm) 0;
+        }
+
+        .result-student-name {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .result-exam-info {
+            color: var(--text-medium);
+            font-size: var(--font-size-sm);
+        }
+
+        .stats-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .stat-card-number {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card-label {
+            color: var(--text-medium);
+            margin-top: var(--spacing-xs);
+        }
+
+        .testimonial-card-full {
+            background: var(--bg-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+
+        .testimonial-quote {
+            font-size: var(--font-size-lg);
+            font-style: italic;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            padding-left: var(--spacing-lg);
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        .year-filter {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .year-btn {
+            padding: 0.625rem 1.25rem;
+            border: 2px solid var(--accent-color);
+            background: transparent;
+            color: var(--accent-dark);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-weight: 600;
+        }
+
+        .year-btn.active,
+        .year-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo"><span>🎓 Excel Academy</span></a>
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="results.html" class="active">Results</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Success Stories</h1>
+            <p>Celebrating excellence and achievements</p>
+        </div>
+    </section>
+
+    <!-- Success Statistics -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Legacy of Success</h2>
+                <p>Numbers that speak for themselves</p>
+            </div>
+
+            <div class="stats-showcase fade-in">
+                <!-- [CUSTOMIZE] Update statistics -->
+                <div class="stat-card">
+                    <div class="stat-card-number" data-counter="500">0</div>
+                    <div class="stat-card-label">IIT/AIIMS Selections</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-number" data-counter="95">0</div>
+                    <div class="stat-card-label">% Success Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-number" data-counter="50">0</div>
+                    <div class="stat-card-label">Top 100 Ranks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-number" data-counter="1500">0</div>
+                    <div class="stat-card-label">Students Enrolled</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Rankers Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>🏆 Top Rankers 2024</h2>
+                <p>Meet our achievers who made us proud</p>
+            </div>
+
+            <!-- Year Filter -->
+            <div class="year-filter fade-in">
+                <button class="year-btn active">2024</button>
+                <button class="year-btn">2023</button>
+                <button class="year-btn">2022</button>
+            </div>
+
+            <!-- Results Grid -->
+            <div class="results-grid fade-in">
+                <!-- [CUSTOMIZE] Add actual student results -->
+                <div class="result-card-detailed">
+                    <span class="result-badge">⭐ Top Rank</span>
+                    <div class="result-rank-large">AIR 47</div>
+                    <div class="result-student-name">Rahul Sharma</div>
+                    <div class="result-exam-info">JEE Advanced 2024<br>IIT Bombay - B.Tech CSE</div>
+                </div>
+
+                <div class="result-card-detailed">
+                    <span class="result-badge">⭐ Top Rank</span>
+                    <div class="result-rank-large">AIR 89</div>
+                    <div class="result-student-name">Priya Patel</div>
+                    <div class="result-exam-info">NEET 2024<br>AIIMS Delhi - MBBS</div>
+                </div>
+
+                <div class="result-card-detailed">
+                    <span class="result-badge">Excellent</span>
+                    <div class="result-rank-large">AIR 156</div>
+                    <div class="result-student-name">Arjun Singh</div>
+                    <div class="result-exam-info">JEE Main 2024<br>IIT Delhi - B.Tech Mechanical</div>
+                </div>
+
+                <div class="result-card-detailed">
+                    <span class="result-badge">Excellent</span>
+                    <div class="result-rank-large">AIR 203</div>
+                    <div class="result-student-name">Sneha Reddy</div>
+                    <div class="result-exam-info">NEET 2024<br>JIPMER - MBBS</div>
+                </div>
+
+                <div class="result-card-detailed">
+                    <span class="result-badge">Outstanding</span>
+                    <div class="result-rank-large">AIR 312</div>
+                    <div class="result-student-name">Vikram Mehta</div>
+                    <div class="result-exam-info">JEE Advanced 2024<br>IIT Kharagpur - B.Tech EE</div>
+                </div>
+
+                <div class="result-card-detailed">
+                    <span class="result-badge">Outstanding</span>
+                    <div class="result-rank-large">AIR 398</div>
+                    <div class="result-student-name">Ananya Gupta</div>
+                    <div class="result-exam-info">NEET 2024<br>AIIMS Jodhpur - MBBS</div>
+                </div>
+
+                <div class="result-card-detailed">
+                    <span class="result-badge">Great</span>
+                    <div class="result-rank-large">AIR 456</div>
+                    <div class="result-student-name">Rohan Kumar</div>
+                    <div class="result-exam-info">JEE Main 2024<br>IIT Roorkee - B.Tech Civil</div>
+                </div>
+
+                <div class="result-card-detailed">
+                    <span class="result-badge">Great</span>
+                    <div class="result-rank-large">AIR 521</div>
+                    <div class="result-student-name">Kavya Nair</div>
+                    <div class="result-exam-info">NEET 2024<br>AFMC Pune - MBBS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>💬 What Our Students Say</h2>
+                <p>Real experiences, real success stories</p>
+            </div>
+
+            <div class="fade-in">
+                <!-- [CUSTOMIZE] Add actual testimonials -->
+                <div class="testimonial-card-full">
+                    <div class="testimonial-header">
+                        <img src="images/gallery/students-1.png" alt="Rahul Sharma" class="testimonial-img">
+                        <div>
+                            <h4 class="result-student-name">Rahul Sharma</h4>
+                            <div class="result-exam-info">AIR 47, JEE Advanced 2024 | IIT Bombay</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        Excel Academy completely transformed my approach to JEE preparation. The faculty's dedication,
+                        personalized attention, and comprehensive study material were instrumental in my success. The
+                        regular testing and detailed performance analysis helped me identify and work on my weak areas.
+                        I'm forever grateful to Excel Academy for making my dream of studying at IIT Bombay a reality.
+                    </p>
+                </div>
+
+                <div class="testimonial-card-full">
+                    <div class="testimonial-header">
+                        <img src="images/gallery/students-1.png" alt="Priya Patel" class="testimonial-img">
+                        <div>
+                            <h4 class="result-student-name">Priya Patel</h4>
+                            <div class="result-exam-info">AIR 89, NEET 2024 | AIIMS Delhi</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        The structured approach and NCERT focus at Excel Academy were exactly what I needed for NEET.
+                        The biology faculty made complex concepts so easy to understand and remember. The mock tests
+                        were mirror images of the actual NEET exam, which boosted my confidence tremendously. Thank you
+                        Excel Academy for this incredible journey!
+                    </p>
+                </div>
+
+                <div class="testimonial-card-full">
+                    <div class="testimonial-header">
+                        <img src="images/gallery/students-1.png" alt="Arjun Singh" class="testimonial-img">
+                        <div>
+                            <h4 class="result-student-name">Arjun Singh</h4>
+                            <div class="result-exam-info">AIR 156, JEE Main 2024 | IIT Delhi</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        Excel Academy is not just a coaching institute; it's a family that supports you through every
+                        high and low. The doubt clearing sessions were a game-changer for me. The teachers were always
+                        available and patient, no matter how basic my questions were. The comprehensive study material
+                        and excellent teaching methodology made all the difference in my JEE journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parent Testimonials -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>👨‍👩‍👧 Parent Testimonials</h2>
+                <p>Trusted by families across the nation</p>
+            </div>
+
+            <div class="grid grid-2 fade-in">
+                <!-- [CUSTOMIZE] Add parent testimonials -->
+                <div class="card">
+                    <div class="card-content">
+                        <p class="testimonial-quote"
+                            style="font-size: var(--font-size-base); padding-left: var(--spacing-md);">
+                            "We are extremely satisfied with Excel Academy's teaching methods and the progress our
+                            daughter made. The regular parent-teacher meetings kept us informed about her performance.
+                            The faculty genuinely cares about each student's success."
+                        </p>
+                        <strong>- Mr. & Mrs. Patel</strong><br>
+                        <small>Parents of Priya Patel (AIIMS Delhi)</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <p class="testimonial-quote"
+                            style="font-size: var(--font-size-base); padding-left: var(--spacing-md);">
+                            "The personalized attention and mentoring at Excel Academy helped our son overcome his
+                            initial struggles with Chemistry. The supportive environment and excellent infrastructure
+                            made learning enjoyable for him."
+                        </p>
+                        <strong>- Mr. & Mrs. Sharma</strong><br>
+                        <small>Parents of Rahul Sharma (IIT Bombay)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container text-center fade-in">
+            <h2>Ready to Write Your Success Story?</h2>
+            <p
+                style="font-size: var(--font-size-lg); max-width: 600px; margin: var(--spacing-md) auto var(--spacing-xl);">
+                Join Excel Academy and become part of our legacy of excellence. Your journey to IIT and AIIMS starts
+                here.
+            </p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary btn-large">Enroll Now</a>
+                <a href="courses.html" class="btn btn-accent btn-large">Explore Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Excel Academy</h4>
+                    <p>Premier coaching institute for JEE and NEET preparation. Building futures, creating leaders.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="courses.html#jee">JEE Main & Advanced</a></li>
+                        <li><a href="courses.html#neet">NEET (UG)</a></li>
+                        <li><a href="courses.html#foundation">Foundation Course</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Education Street<br>Academic City, State - 123456</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ info@excelacademy.com</p>
+                    <p>🕐 Mon - Sat: 8:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Excel Academy. All rights reserved. | Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

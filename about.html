@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>About Us - Excel Academy | Premier JEE & NEET Coaching</title>
+    <meta name="description"
+        content="Learn about Excel Academy's mission, vision, expert faculty, and proven teaching methodology for JEE and NEET preparation.">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: var(--bg-white);
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            color: var(--bg-white);
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-sm);
+            color: var(--bg-gray-100);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: var(--spacing-md) 0;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: -20px;
+            width: 2px;
+            background: var(--bg-gray-200);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 25px;
+            width: 30px;
+            height: 30px;
+            border-radius: var(--radius-full);
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .mission-card,
+        .vision-card {
+            background: var(--bg-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card::before,
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .mission-card h3,
+        .vision-card h3 {
+            color: var(--primary-color);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .faculty-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .faculty-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .faculty-info {
+            padding: var(--spacing-md);
+        }
+
+        .faculty-name {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .faculty-qualification {
+            color: var(--primary-color);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .faculty-subject {
+            color: var(--text-medium);
+            font-size: var(--font-size-sm);
+        }
+
+        .methodology-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .methodology-step {
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        .methodology-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-md);
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .methodology-step h4 {
+            margin-bottom: var(--spacing-sm);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <span>🎓 Excel Academy</span>
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="fade-in">About Excel Academy</h1>
+            <div class="breadcrumb fade-in">
+                <a href="index.html" style="color: var(--bg-gray-100);">Home</a>
+                <span>/</span>
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institute Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Who We Are</h2>
+                <p>Building Dreams, Creating Leaders Since 2009</p>
+            </div>
+
+            <div class="fade-in">
+                <!-- [CUSTOMIZE] Update institute story -->
+                <p class="text-center"
+                    style="max-width: 900px; margin: 0 auto; font-size: var(--font-size-lg); line-height: 1.8; color: var(--text-medium);">
+                    Excel Academy was founded with a vision to provide world-class coaching for competitive exams like
+                    JEE and NEET. Over the past 15 years, we have helped thousands of students achieve their dreams of
+                    studying at premier institutions like IITs and AIIMS. Our commitment to excellence, personalized
+                    attention, and proven teaching methodology have made us one of the most trusted names in competitive
+                    exam coaching.
+                </p>
+            </div>
+
+            <!-- Milestones Timeline -->
+            <div class="mt-4">
+                <h3 class="text-center mb-3 fade-in">Our Journey</h3>
+                <div class="timeline fade-in">
+                    <!-- [CUSTOMIZE] Update milestones -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <h4>2009 - Foundation</h4>
+                        <p>Excel Academy was established with a batch of 50 students and a vision to transform
+                            competitive exam preparation.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <h4>2012 - First IIT Selection</h4>
+                        <p>Our first student secured admission to IIT Bombay, marking the beginning of our success
+                            story.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <h4>2015 - Expansion</h4>
+                        <p>Expanded to a state-of-the-art facility with advanced classrooms and digital learning
+                            resources.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <h4>2020 - Digital Transformation</h4>
+                        <p>Launched hybrid learning model combining classroom and online education.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">5</div>
+                        <h4>2024 - 500+ Selections</h4>
+                        <p>Achieved milestone of 500+ IIT/AIIMS selections, cementing our position as a premier coaching
+                            institute.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="mission-vision-grid fade-in">
+                <!-- [CUSTOMIZE] Update mission & vision -->
+                <div class="mission-card">
+                    <h3>🎯 Our Mission</h3>
+                    <p>To provide comprehensive, high-quality coaching that empowers students to excel in competitive
+                        examinations and achieve their academic goals. We are committed to fostering critical thinking,
+                        problem-solving skills, and a deep understanding of concepts.</p>
+                </div>
+
+                <div class="vision-card">
+                    <h3>👁️ Our Vision</h3>
+                    <p>To be the most trusted and respected coaching institute in India, known for our innovative
+                        teaching methods, dedicated faculty, and consistent results. We envision a future where every
+                        student has access to quality education and the opportunity to realize their full potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Meet Our Expert Faculty</h2>
+                <p>Learn from the best in the industry</p>
+            </div>
+
+            <div class="faculty-grid fade-in">
+                <!-- [CUSTOMIZE] Add actual faculty details -->
+                <div class="faculty-card">
+                    <img src="images/faculty/faculty-1.png" alt="Dr. Rajesh Kumar" class="faculty-image">
+                    <div class="faculty-info">
+                        <div class="faculty-name">Dr. Rajesh Kumar</div>
+                        <div class="faculty-qualification">Ph.D. (IIT Delhi), 18 Years Experience</div>
+                        <div class="faculty-subject">Physics (JEE/NEET)</div>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="images/faculty/faculty-2.png" alt="Prof. Anjali Sharma" class="faculty-image">
+                    <div class="faculty-info">
+                        <div class="faculty-name">Prof. Anjali Sharma</div>
+                        <div class="faculty-qualification">M.Sc. Chemistry (Gold Medalist), 15 Years</div>
+                        <div class="faculty-subject">Chemistry (JEE/NEET)</div>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="images/faculty/faculty-1.png" alt="Mr. Vikram Singh" class="faculty-image">
+                    <div class="faculty-info">
+                        <div class="faculty-name">Mr. Vikram Singh</div>
+                        <div class="faculty-qualification">B.Tech (IIT Kanpur), 12 Years Experience</div>
+                        <div class="faculty-subject">Mathematics (JEE)</div>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="images/faculty/faculty-2.png" alt="Dr. Meera Reddy" class="faculty-image">
+                    <div class="faculty-info">
+                        <div class="faculty-name">Dr. Meera Reddy</div>
+                        <div class="faculty-qualification">MBBS, MD (AIIMS), 10 Years Teaching</div>
+                        <div class="faculty-subject">Biology (NEET)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Methodology -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Teaching Methodology</h2>
+                <p>A systematic approach to success</p>
+            </div>
+
+            <div class="methodology-steps fade-in">
+                <!-- [CUSTOMIZE] Adjust methodology as needed -->
+                <div class="methodology-step">
+                    <div class="methodology-icon">📖</div>
+                    <h4>1. Concept Building</h4>
+                    <p>Strong foundation with in-depth concept explanation and NCERT focus</p>
+                </div>
+
+                <div class="methodology-step">
+                    <div class="methodology-icon">✍️</div>
+                    <h4>2. Practice Sessions</h4>
+                    <p>Daily practice problems and assignments to reinforce learning</p>
+                </div>
+
+                <div class="methodology-step">
+                    <div class="methodology-icon">📝</div>
+                    <h4>3. Regular Testing</h4>
+                    <p>Weekly tests and All India test series for performance tracking</p>
+                </div>
+
+                <div class="methodology-step">
+                    <div class="methodology-icon">🤔</div>
+                    <h4>4. Doubt Clearing</h4>
+                    <p>Dedicated doubt clearing sessions and one-on-one mentoring</p>
+                </div>
+
+                <div class="methodology-step">
+                    <div class="methodology-icon">📊</div>
+                    <h4>5. Analysis & Feedback</h4>
+                    <p>Detailed performance analysis and personalized improvement plans</p>
+                </div>
+
+                <div class="methodology-step">
+                    <div class="methodology-icon">🎯</div>
+                    <h4>6. Revision & Mastery</h4>
+                    <p>Systematic revision modules and advanced problem-solving techniques</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 fade-in">
+                <a href="courses.html" class="btn btn-primary btn-large">Explore Our Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Excel Academy</h4>
+                    <p>Premier coaching institute for JEE and NEET preparation. Building futures, creating leaders.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="courses.html#jee">JEE Main & Advanced</a></li>
+                        <li><a href="courses.html#neet">NEET (UG)</a></li>
+                        <li><a href="courses.html#foundation">Foundation Course</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Education Street<br>Academic City, State - 123456</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ info@excelacademy.com</p>
+                    <p>🕐 Mon - Sat: 8:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Excel Academy. All rights reserved. | Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

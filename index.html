@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags - [CUSTOMIZE] -->
+    <title>Excel Academy - Premier JEE & NEET Coaching Institute</title>
+    <meta name="description" content="Excel Academy offers top-quality JEE and NEET coaching with experienced faculty, proven results, and comprehensive study materials. Join India's leading coaching institute for IIT and medical entrance preparation.">
+    <meta name="keywords" content="JEE coaching, NEET coaching, IIT JEE preparation, medical entrance coaching, engineering entrance exam, competitive exam coaching">
+    <meta name="author" content="Excel Academy">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Excel Academy - Premier JEE & NEET Coaching">
+    <meta property="og:description" content="Your path to IIT & AIIMS starts here. Expert faculty, proven results.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon - [CUSTOMIZE] -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Additional Homepage Styles -->
+    <style>
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(rgba(30, 64, 175, 0.85), rgba(124, 58, 237, 0.85)), url('images/hero/hero-bg-1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--bg-white);
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+
+        .hero h1 {
+            color: var(--bg-white);
+            margin-bottom: var(--spacing-md);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-xl);
+            color: var(--bg-gray-100);
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* Courses Section */
+        .course-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform var(--transition-base);
+        }
+
+        .course-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .course-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: var(--spacing-lg);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+            font-size: var(--font-size-base);
+            color: var(--text-medium);
+        }
+
+        /* Testimonials */
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            margin: 0 auto var(--spacing-md);
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+        }
+
+        .testimonial-text {
+            font-size: var(--font-size-lg);
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .testimonial-achievement {
+            font-size: var(--font-size-sm);
+            color: var(--text-light);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .testimonial-nav button {
+            background-color: var(--bg-gray-200);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-size: var(--font-size-xl);
+        }
+
+        .testimonial-nav button:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-md);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: var(--radius-full);
+            background-color: var(--bg-gray-200);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+            width: 30px;
+        }
+
+        /* Results Marquee */
+        .results-marquee {
+            overflow: hidden;
+            background-color: var(--bg-white);
+            padding: var(--spacing-lg) 0;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: var(--spacing-lg);
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .result-card {
+            flex: 0 0 300px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .result-rank {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .result-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .result-exam {
+            font-size: var(--font-size-sm);
+            color: var(--text-medium);
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background: var(--gradient-primary);
+            color: var(--bg-white);
+        }
+
+        .contact-form-section h2,
+        .contact-form-section p {
+            color: var(--bg-white);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                margin-top: 60px;
+                min-height: 80vh;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .course-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo - [CUSTOMIZE] -->
+            <a href="index.html" class="navbar-logo">
+                <span>🎓 Excel Academy</span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content fade-in">
+            <!-- [CUSTOMIZE] Main headline and tagline -->
+            <h1>Your Path to IIT & AIIMS Starts Here</h1>
+            <p class="hero-subtitle">Expert Faculty • Proven Results • Comprehensive Study Materials</p>
+            <div class="hero-cta">
+                <a href="contact.html" class="btn btn-accent btn-large">Enquire Now</a>
+                <a href="contact.html" class="btn btn-secondary btn-large">Book Free Demo</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span style="font-size: 2rem;">↓</span>
+        </div>
+    </section>
+
+    <!-- Courses Offered Section -->
+    <section class="section" id="courses">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Courses</h2>
+                <p>Comprehensive programs designed for success</p>
+            </div>
+
+            <div class="grid grid-3 fade-in">
+                <!-- JEE Course -->
+                <div class="card course-card">
+                    <div class="card-content">
+                        <div class="course-icon">⚛️</div>
+                        <h3 class="card-title">JEE Main & Advanced</h3>
+                        <p class="card-text">Complete preparation for IIT-JEE with experienced faculty, comprehensive study material, and regular mock tests.</p>
+                        <ul style="text-align: left; color: var(--text-medium); margin-bottom: var(--spacing-md);">
+                            <li>2-Year & 1-Year Programs</li>
+                            <li>Physics, Chemistry, Mathematics</li>
+                            <li>Daily Practice Problems</li>
+                            <li>All India Test Series</li>
+                        </ul>
+                        <a href="courses.html#jee" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- NEET Course -->
+                <div class="card course-card">
+                    <div class="card-content">
+                        <div class="course-icon">🩺</div>
+                        <h3 class="card-title">NEET (UG)</h3>
+                        <p class="card-text">Strategic NEET preparation focused on Physics, Chemistry, and Biology with expert medical entrance coaching.</p>
+                        <ul style="text-align: left; color: var(--text-medium); margin-bottom: var(--spacing-md);">
+                            <li>2-Year & 1-Year Programs</li>
+                            <li>PCB with NCERT Focus</li>
+                            <li>Previous Year Analysis</li>
+                            <li>Mock Tests & Solutions</li>
+                        </ul>
+                        <a href="courses.html#neet" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Foundation Course -->
+                <div class="card course-card">
+                    <div class="card-content">
+                        <div class="course-icon">📚</div>
+                        <h3 class="card-title">Foundation (8-10)</h3>
+                        <p class="card-text">Build a strong foundation for competitive exams with early preparation for classes 8, 9, and 10.</p>
+                        <ul style="text-align: left; color: var(--text-medium); margin-bottom: var(--spacing-md);">
+                            <li>Concept Building</li>
+                            <li>NTSE & Olympiad Prep</li>
+                            <li>Board Exam Excellence</li>
+                            <li>Competitive Mindset</li>
+                        </ul>
+                        <a href="courses.html#foundation" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section section-alt" id="why-us">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Why Choose Excel Academy?</h2>
+                <p>What makes us the preferred choice for thousands of students</p>
+            </div>
+
+            <div class="stats-grid fade-in">
+                <!-- [CUSTOMIZE] Update statistics -->
+                <div class="stat-item">
+                    <div class="stat-number" data-counter="1500">0</div>
+                    <div class="stat-label">Students Enrolled</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-counter="15">0</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-counter="500">0</div>
+                    <div class="stat-label">IIT/AIIMS Selections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-counter="50">0</div>
+                    <div class="stat-label">Expert Faculty</div>
+                </div>
+            </div>
+
+            <div class="grid grid-4 mt-4 fade-in">
+                <div class="card">
+                    <div class="card-content">
+                        <h4>🎯 Proven Track Record</h4>
+                        <p class="card-text">Consistent top ranks in JEE and NEET with students securing positions in premier institutes.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h4>👨‍🏫 Expert Faculty</h4>
+                        <p class="card-text">Highly qualified and experienced teachers from IITs and top institutions.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h4>📖 Comprehensive Material</h4>
+                        <p class="card-text">Well-researched study materials, practice papers, and digital resources.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h4>🎓 Small Batch Sizes</h4>
+                        <p class="card-text">Limited students per batch ensuring personalized attention and doubt clearing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Results Section -->
+    <section class="section" id="results">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Success Stories</h2>
+                <p>Celebrating the achievements of our brilliant students</p>
+            </div>
+
+            <div class="results-marquee">
+                <!-- [CUSTOMIZE] Update with actual results -->
+                <div class="marquee-content">
+                    <div class="result-card">
+                        <div class="result-rank">AIR 47</div>
+                        <div class="result-name">Rahul Sharma</div>
+                        <div class="result-exam">JEE Advanced 2024</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-rank">AIR 89</div>
+                        <div class="result-name">Priya Patel</div>
+                        <div class="result-exam">NEET 2024</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-rank">AIR 156</div>
+                        <div class="result-name">Arjun Singh</div>
+                        <div class="result-exam">JEE Main 2024</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-rank">AIR 203</div>
+                        <div class="result-name">Sneha Reddy</div>
+                        <div class="result-exam">NEET 2024</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-rank">AIR 312</div>
+                        <div class="result-name">Vikram Mehta</div>
+                        <div class="result-exam">JEE Advanced 2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 fade-in">
+                <a href="results.html" class="btn btn-primary btn-large">View All Results</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-alt" id="testimonials">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>What Our Students Say</h2>
+                <p>Hear from those who achieved their dreams with us</p>
+            </div>
+
+            <div class="testimonial-slider fade-in">
+                <!-- [CUSTOMIZE] Add real testimonials -->
+                <div class="testimonial-slide active">
+                    <img src="images/gallery/students-1.png" alt="Student" class="testimonial-image">
+                    <p class="testimonial-text">"Excel Academy transformed my preparation. The faculty's dedication and personalized attention helped me secure AIR 47 in JEE Advanced. Forever grateful!"</p>
+                    <div class="testimonial-author">Rahul Sharma</div>
+                    <div class="testimonial-achievement">IIT Bombay, B.Tech CSE</div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <img src="images/gallery/students-1.png" alt="Student" class="testimonial-image">
+                    <p class="testimonial-text">"The structured approach and regular testing at Excel Academy built my confidence. The mock tests were exactly like the actual NEET exam!"</p>
+                    <div class="testimonial-author">Priya Patel</div>
+                    <div class="testimonial-achievement">AIIMS Delhi, MBBS</div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <img src="images/gallery/students-1.png" alt="Student" class="testimonial-image">
+                    <p class="testimonial-text">"Best coaching institute! The doubt clearing sessions and comprehensive study material were game-changers for my JEE preparation."</p>
+                    <div class="testimonial-author">Arjun Singh</div>
+                    <div class="testimonial-achievement">IIT Delhi, B.Tech Mechanical</div>
+                </div>
+
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev" aria-label="Previous testimonial">‹</button>
+                    <button class="testimonial-next" aria-label="Next testimonial">›</button>
+                </div>
+                <div class="testimonial-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section contact-form-section" id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get in Touch</h2>
+                <p>Take the first step towards your dream college</p>
+            </div>
+
+            <div class="contact-form fade-in">
+                <!-- [CUSTOMIZE] Replace YOUR_EMAIL with actual email -->
+                <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST" data-validate="true">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Enquiry from Excel Academy Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/index.html?success=true">
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                        <span class="form-error">Please enter your name</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                        <span class="form-error">Please enter a valid email</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" required>
+                        <span class="form-error">Please enter a valid 10-digit phone number</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course" class="form-label">Course Interested In *</label>
+                        <select id="course" name="course" class="form-select" required>
+                            <option value="">Select a course</option>
+                            <option value="JEE Main & Advanced">JEE Main & Advanced</option>
+                            <option value="NEET (UG)">NEET (UG)</option>
+                            <option value="Foundation (8-10)">Foundation (8-10)</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="form-error">Please select a course</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Section - [CUSTOMIZE] -->
+                <div class="footer-section">
+                    <h4>Excel Academy</h4>
+                    <p>Premier coaching institute for JEE and NEET preparation. Building futures, creating leaders.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Courses -->
+                <div class="footer-section">
+                    <h4>Our Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="courses.html#jee">JEE Main & Advanced</a></li>
+                        <li><a href="courses.html#neet">NEET (UG)</a></li>
+                        <li><a href="courses.html#foundation">Foundation Course</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info - [CUSTOMIZE] -->
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Education Street<br>Academic City, State - 123456</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ info@excelacademy.com</p>
+                    <p>🕐 Mon - Sat: 8:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Excel Academy. All rights reserved. | Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+
+</body>
+</html>

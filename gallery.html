@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Excel Academy</title>
+    <meta name="description"
+        content="Explore our classrooms, faculty, students, and world-class infrastructure at Excel Academy.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: var(--bg-white);
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            color: var(--bg-white);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .gallery-filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+
+        .gallery-filter-btn.active,
+        .gallery-filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--bg-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: var(--spacing-md);
+            transform: translateY(100%);
+            transition: transform var(--transition-base);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo"><span>🎓 Excel Academy</span></a>
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>A glimpse into life at Excel Academy</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- Gallery Filters -->
+            <div class="gallery-filters fade-in">
+                <button class="gallery-filter-btn active" data-filter="all">All</button>
+                <button class="gallery-filter-btn" data-filter="classrooms">Classrooms</button>
+                <button class="gallery-filter-btn" data-filter="faculty">Faculty</button>
+                <button class="gallery-filter-btn" data-filter="students">Students</button>
+                <button class="gallery-filter-btn" data-filter="infrastructure">Infrastructure</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid fade-in">
+                <!-- Classrooms -->
+                <div class="gallery-item" data-category="classrooms">
+                    <img src="images/gallery/classroom-1.png" alt="Modern Classroom">
+                    <div class="gallery-overlay">
+                        <h4>Modern Classroom</h4>
+                        <p>State-of-the-art learning environment</p>
+                    </div>
+                </div>
+
+                <!-- Faculty -->
+                <div class="gallery-item" data-category="faculty">
+                    <img src="images/gallery/faculty-1.png" alt="Faculty Teaching">
+                    <div class="gallery-overlay">
+                        <h4>Expert Faculty</h4>
+                        <p>Experienced teachers in action</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="faculty">
+                    <img src="images/gallery/faculty-2.png" alt="Faculty Teaching">
+                    <div class="gallery-overlay">
+                        <h4>Interactive Sessions</h4>
+                        <p>Engaging classroom discussions</p>
+                    </div>
+                </div>
+
+                <!-- Students -->
+                <div class="gallery-item" data-category="students">
+                    <img src="images/gallery/students-1.png" alt="Students Studying">
+                    <div class="gallery-overlay">
+                        <h4>Focused Students</h4>
+                        <p>Collaborative learning environment</p>
+                    </div>
+                </div>
+
+                <!-- Infrastructure -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <img src="images/gallery/infrastructure-1.png" alt="Building Exterior">
+                    <div class="gallery-overlay">
+                        <h4>Our Campus</h4>
+                        <p>Modern educational facility</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="infrastructure">
+                    <img src="images/gallery/infrastructure-2.png" alt="Library">
+                    <div class="gallery-overlay">
+                        <h4>Library</h4>
+                        <p>Extensive collection of reference books</p>
+                    </div>
+                </div>
+
+                <!-- Additional entries duplicated for demonstration -->
+                <div class="gallery-item" data-category="classrooms">
+                    <img src="images/gallery/classroom-1.png" alt="Smart Classroom">
+                    <div class="gallery-overlay">
+                        <h4>Smart Classroom</h4>
+                        <p>Digital learning tools</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="students">
+                    <img src="images/gallery/students-1.png" alt="Group Study">
+                    <div class="gallery-overlay">
+                        <h4>Group Study</h4>
+                        <p>Peer learning sessions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+        <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Excel Academy</h4>
+                    <p>Premier coaching institute for JEE and NEET preparation. Building futures, creating leaders.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="courses.html#jee">JEE Main & Advanced</a></li>
+                        <li><a href="courses.html#neet">NEET (UG)</a></li>
+                        <li><a href="courses.html#foundation">Foundation Course</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Education Street<br>Academic City, State - 123456</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ info@excelacademy.com</p>
+                    <p>🕐 Mon - Sat: 8:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Excel Academy. All rights reserved. | Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+
+</html>
